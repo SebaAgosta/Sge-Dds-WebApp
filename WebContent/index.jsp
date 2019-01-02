@@ -15,6 +15,17 @@
 </head>
 <body>
 
+<p> HTML </p>
+<p> CSS </p>
+<p> JavaScript </p>
+<p> Jsps </p>
+<p> Servlets </p>
+
+<FORM action="LoginWeb.jr" method= "POST">
+</FORM> 
+
+
+
 </body>
 </html>
 </jsp:root>

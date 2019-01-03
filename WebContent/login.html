@@ -1,10 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html" charset="ISO-8859-1" >
 <title>..:: Sistema de Gestion de Dispositivos Web  ::..</title>
+
+<script type="text/javascript" language="JavaScript">
+function carga() {
+    document.getElementById("usuario").focus();
+
+
+    
+}
+0
+function valideDatos(){
+
+    var usuario = document.getElementById("usuario");
+    var password = document.getElementById("password");
+    if ((password.value == "" || password.value == '' || password.value == null)&&(usuario.value == "" || usuario.value == '' || usuario.value == null)){
+        alert("Ingresa tu usuario y password");
+        usuario.focus();
+        return false;
+    }else if(usuario.value == "" || usuario.value == '' || usuario.value == null){
+        alert("Ingresa tu usuario");
+        usuario.focus();
+        return false;
+    } else if(password.value == "" || password.value == '' || password.value == null){
+        alert("Ingresa tu password");
+        password.focus();
+        return false;
+    }
+    return true; 
+
+
+}
+</script>
 </head>
-<body>
+<body onload="carga();">
 
 <p> HTML </p>
 <p> CSS </p>
@@ -14,10 +45,10 @@
 
 <FORM action="LoginWeb.jr" method= "POST" onsubmit="valideDatos();">
 
-<table>
+<table align="center">
 
 <tr>
-    <td>Ingresa tu usuario y contraseña</td>
+    <td colspan="2" style="font-weight:bold; size: 18px; color: green;">Ingresa tu usuario y contraseña</td>
 </tr> 
 <tr>
     <td>Usuario: </td>

@@ -10,4 +10,8 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>login.html</welcome-file>
   </welcome-file-list>
+  
+  
+
 </web-app>
+

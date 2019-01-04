@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class LoginServlet
  */
-@WebServlet("/LoginWeb.jr")
+
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -26,8 +26,10 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("Welcome....");
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 		doPost(request,response);
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -36,6 +38,9 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String usuario = request.getParameter("usuario");
 		String password = request.getParameter("password");
+		System.out.println("Welcome....");
+		
+		
 		if (usuario.equals("Sebastian") && password.equals("Agosta")) {
 			System.out.println("Welcome....");
 			

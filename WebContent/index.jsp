@@ -21,8 +21,7 @@
 <p> Jsps </p>
 <p> Servlets </p>
 
-<FORM action="LoginWeb.jr" method= "POST">
-</FORM> 
+
 
 
 

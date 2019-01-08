@@ -5,13 +5,37 @@
 <title>..:: Sistema de Gestion de Dispositivos Web  ::..</title>
 
 <script type="text/javascript" language="JavaScript">
-function carga() {
-    document.getElementById("usuario").focus();
-
-
-    
+function carga(){
+  var x = document.getElementById("myFile");
+  var txt = "";
+  if ('files' in x) {
+    if (x.files.length == 0) {
+      txt = "Select one or more files.";
+    } else {
+      for (var i = 0; i < x.files.length; i++) {
+        txt += "<br><strong>" + (i+1) + ". file</strong><br>";
+        var file = x.files[i];
+        if ('name' in file) {
+          txt += "name: " + file.name + "<br>";
+        }
+        if ('size' in file) {
+          txt += "size: " + file.size + " bytes <br>";
+        }
+      }
+    }
+  } 
+  else {
+    if (x.value == "") {
+      txt += "Select one or more files.";
+    } else {
+      txt += "The files property is not supported by your browser!";
+      txt  += "<br>The path of the selected file: " + x.value; // If the browser does not support the files property, it will return the path of the selected file instead. 
+    }
+  }
+  document.getElementById("demo").innerHTML = txt;
 }
-0
+
+
 function valideDatos(){
 
     var usuario = document.getElementById("usuario");
@@ -34,6 +58,8 @@ function valideDatos(){
 
 }
 </script>
+
+
 </head>
 <body onload="carga();">
 
@@ -43,12 +69,12 @@ function valideDatos(){
 <p> Jsps </p>
 <p> Servlets </p>
 
-<FORM action="LoginWeb.jr" method= "POST" onsubmit="valideDatos();">
 
+<form action="" method="post" enctype="multipart/form-data" target="_blank">
 <table align="center">
 
 <tr>
-    <td colspan="2" style="font-weight:bold; size: 18px; color: green;">Ingresa tu usuario y contraseña</td>
+    <td colspan="2" style="font-weight:bold; size: 18px; color: green;">Ingresa tu usuario y contraseï¿½a</td>
 </tr> 
 <tr>
     <td>Usuario: </td>
@@ -79,11 +105,17 @@ function valideDatos(){
 <td><button type="submit">Enviar</button></td>
 </tr>
 
+<body>
+<button onclick="location.href='cargarUsuario.html'">Cargar un usuario</button>
+</body>
+
+
 
 
 <p> Dispositivos </p>
 <tr>
 <td><input type="file" name="Dispositivos" id="dispositivos"  ><br></td>
+<button onclick="location.href='cargarDispositivo.html'">Cargar un dispositivo</button>
 <td><button type="submit">Enviar</button></td>
 </tr>
 
